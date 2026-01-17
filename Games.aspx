@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Программы и компоненты BAHK.ORG</title>
+    <style type="text/css">
+        body { 
+            background: #008080; 
+            font-family: "MS Sans Serif", "Tahoma", sans-serif; 
+            font-size: 11px; 
+            padding: 20px; 
+            margin: 0;
+        }
+
+        /* Главное окно проводника */
+        .explorer-window {
+            background: #c0c0c0;
+            border-left: 2px solid #ffffff;
+            border-top: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 600px;
+            margin: 0 auto;
+            padding: 2px;
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 3px 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Белая область со списком файлов */
+        .file-view {
+            background: #ffffff;
+            border-left: 2px solid #808080;
+            border-top: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            margin: 10px;
+            padding: 20px;
+            min-height: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .game-item {
+            width: 80px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 5px;
+        }
+
+        .game-item:hover {
+            background: #000080;
+            color: white;
+            border: 1px dotted #ffff00;
+        }
+
+        .game-item img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            margin: 0 auto 5px auto;
+            image-rendering: pixelated;
+        }
+
+        .game-name {
+            word-wrap: break-word;
+            line-height: 1.2;
+        }
+
+        /* Подвал окна */
+        .status-bar {
+            background: #c0c0c0;
+            border-top: 1px solid #808080;
+            padding: 3px 10px;
+            font-size: 10px;
+        }
+
+        .btn-95 {
+            background: #c0c0c0;
+            border-left: 1px solid #ffffff;
+            border-top: 1px solid #ffffff;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            padding: 2px 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 11px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-95:active {
+            border-left: 1px solid #000000;
+            border-top: 1px solid #000000;
+            border-right: 1px solid #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .locked {
+            opacity: 0.6;
+            filter: grayscale(100%);
+        }
+    </style>
+    <script type="text/javascript">
+        // <![CDATA[
+        window.onload = function() {
+            if (localStorage.getItem('isAuth') !== 'true') {
+                document.body.innerHTML = `
+                    <div style="display:flex; justify-content:center; align-items:center; height:100vh;">
+                        <div class="explorer-window" style="width:300px;">
+                            <div class="title-bar"><span>System Error</span></div>
+                            <div style="padding:20px; text-align:center;">
+                                <p>Доступ запрещен. <br/>Пожалуйста, войдите в систему.</p>
+                                <a href="Login.aspx" class="btn-95">ОК</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        // ]]>
+    </script>
+</head>
+<body>
+
+<div class="explorer-window">
+    <div class="title-bar">
+        <span>C:\\GAMES\\BAHKF_CORE</span>
+        <span style="font-family:monospace;">[X]</span>
+    </div>
+
+    <div style="padding: 10px 10px 0 10px;">
+        <a href="index.aspx" class="btn-95">Назад</a>
+    </div>
+
+    <div class="file-view">
+        <a href="PlayingFun.aspx" class="game-item">
+            <img src="https://web.archive.org/web/20091027063251im_/http://geocities.com/Athens/Olympus/4472/joystick.gif" alt="Joy" />
+            <div class="game-name">Build_2026_01_18.exe</div>
+        </a>
+
+        <div class="game-item locked" title="Файл зашифрован">
+            <img src="https://web.archive.org/web/20090830052345im_/http://geocities.com/Tokyo/Temple/8525/computer.gif" alt="Locked" />
+            <div class="game-name">Secret_Level.bahkf</div>
+        </div>
+
+        <div class="game-item locked">
+            <img src="https://web.archive.org/web/20091027052934im_/http://geocities.com/SiliconValley/Way/1401/folder.gif" alt="Folder" />
+            <div class="game-name">Coming_Soon</div>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        Объектов: 3 | Свободно: 1.44 MB (A:)
+    </div>
+</div>
+
+<div style="text-align:center; color:white; margin-top:20px; font-size:10px;">
+    Утилита просмотра BAHKF-библиотек v2.0
+</div>
+
+</body>
+</html>

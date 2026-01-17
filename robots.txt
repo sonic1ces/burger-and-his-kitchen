@@ -1,0 +1,15 @@
+User-agent: *
+# Запрещаем индексировать папку с логикой и ассетами
+Disallow: /Login/
+Disallow: /assets/
+
+# Запрещаем поисковикам видеть твои файлы проекта
+Disallow: /*.bahkf$
+Disallow: /*.aspx$
+
+# Разрешаем индексировать только главную страницу
+Allow: /index.aspx
+Allow: /index.html
+
+# Указываем путь к карте сайта (если решишь сделать)
+Sitemap: http://bahk.org/sitemap.xml
